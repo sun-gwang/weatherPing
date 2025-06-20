@@ -5,24 +5,29 @@
  * @format
  */
 
-import { NewAppScreen } from '@react-native/new-app-screen';
-import { StatusBar, StyleSheet, useColorScheme, View } from 'react-native';
+import { StyleSheet, SafeAreaView, View, Text, Image, ScrollView} from 'react-native';
+import { Component, Fragment} from 'react';
+import Profile from './src/screens/profile'
+import Button from './src/components/Button';
+import HomeScreen from './src/screens/HomeScreen';
 
-function App() {
-  const isDarkMode = useColorScheme() === 'dark';
+class App extends Component {
+    render() {
 
-  return (
-    <View style={styles.container}>
-      <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
-      <NewAppScreen templateFileName="App.tsx" />
-    </View>
-  );
+    return (
+      <>
+        <SafeAreaView>
+          <HomeScreen />
+        </SafeAreaView>
+      </>
+    );
+  }
 }
-
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
+  button: {
+    
   },
+  
 });
 
 export default App;
